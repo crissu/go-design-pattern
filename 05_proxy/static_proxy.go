@@ -28,16 +28,17 @@ type UserProxy struct {
 
 // NewUserProxy NewUserProxy
 func NewUserProxy(user *User) *UserProxy {
-	return &UserProxy{
+	newUserProxy := &UserProxy{
 		user: user,
 	}
+	return newUserProxy
 }
 
 // Login 登录，和 user 实现相同的接口
 func (p *UserProxy) Login(username, password string) error {
 	// before 这里可能会有一些统计的逻辑
 	start := time.Now()
-
+	log.Println("username:", username, " -- password:", password)
 	// 这里是原有的业务逻辑
 	if err := p.user.Login(username, password); err != nil {
 		return err
