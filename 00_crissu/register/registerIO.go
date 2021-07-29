@@ -23,3 +23,15 @@ func NewRegister(cla string) RegisterInterface {
 func Register(register RegisterInterface) {
 	OneRegister = register
 }
+
+func Run(){
+	OneRegister.run()
+}
+
+func Smile() {
+	OneRegister.smile()
+}
+
+func Sleep() {
+	OneRegister.sleep()
+}

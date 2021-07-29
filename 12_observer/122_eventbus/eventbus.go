@@ -6,6 +6,14 @@ import (
 	"sync"
 )
 
+/*
+我们实现一个支持以下功能的事件总线
+
+异步不阻塞
+支持任意参数值
+
+ */
+
 // Bus Bus
 type Bus interface {
 	Subscribe(topic string, handler interface{}) error
